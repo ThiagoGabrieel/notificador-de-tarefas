@@ -15,4 +15,13 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "tarefa")
 public class TarefaEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    private String nome;
+    private String descricao;
+    private LocalDate dataDeCriacaoDaTarefa;
+    private LocalDateTime horarioParaExecutarTarefa;
 }
