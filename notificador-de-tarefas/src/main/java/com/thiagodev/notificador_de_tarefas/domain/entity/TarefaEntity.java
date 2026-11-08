@@ -27,4 +27,8 @@ public class TarefaEntity {
     private String descricao;
     private LocalDate dataDeCriacaoDaTarefa;
     private LocalDateTime horarioParaExecutarTarefa;
+
+    private LocalDate data;
+    private LocalTime horario;
+
 }
