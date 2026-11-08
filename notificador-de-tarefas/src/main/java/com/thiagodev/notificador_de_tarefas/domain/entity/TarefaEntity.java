@@ -19,7 +19,11 @@ public class TarefaEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nome;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "usuarios_id")
+    private UsuarioEntity usuario;
+
+    private String titulo;
     private String descricao;
     private LocalDate dataDeCriacaoDaTarefa;
     private LocalDateTime horarioParaExecutarTarefa;
