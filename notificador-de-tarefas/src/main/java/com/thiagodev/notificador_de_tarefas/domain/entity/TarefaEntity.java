@@ -50,4 +50,10 @@ public class TarefaEntity {
         this.tarefaNotificada = false;
     }
 
+    public void marcarComoNotificada(){
+        this.tarefaNotificada = true;
+    }
+    public void marcarTarefaConcluida(){
+        this.tarefaConcluida = true;
+    }
 }
