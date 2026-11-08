@@ -25,10 +25,18 @@ public class TarefaEntity {
 
     private String titulo;
     private String descricao;
-    private LocalDate dataDeCriacaoDaTarefa;
-    private LocalDateTime horarioParaExecutarTarefa;
 
     private LocalDate data;
     private LocalTime horario;
 
+    private boolean tarefaNotificada;
+    private boolean tarefaConcluida;
+
+    public TarefaEntity(UsuarioEntity usuario, String titulo, String descricao, LocalDate data,
+                        LocalTime horario) {
+        this.usuario = Objects.requireNonNull(usuario, "Usuario é obrigatório");
+        this.titulo = Objects.requireNonNull(titulo, "Titulo é obrigatório");
+        this.descricao = descricao;
+        definirLembrete(data, horario);
+    }
 }
