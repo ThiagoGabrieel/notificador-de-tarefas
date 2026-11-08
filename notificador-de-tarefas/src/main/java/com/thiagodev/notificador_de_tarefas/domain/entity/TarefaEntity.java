@@ -39,6 +39,11 @@ public class TarefaEntity {
         this.descricao = descricao;
         definirLembrete(data, horario);
     }
+
+    public void reagendar(LocalDate data, LocalTime horario){
+        definirLembrete(data,horario);
+    }
+
     public void definirLembrete(LocalDate data, LocalTime horario){
         this.data = Objects.requireNonNull(data, "Data é obrigatório");
         this.horario = Objects.requireNonNull(horario, "Horario é obrigatório");
