@@ -1,24 +1,23 @@
 package com.thiagodev.notificador_de_tarefas.domain.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.Objects;
 
-@Getter @Setter
-@AllArgsConstructor
-@NoArgsConstructor
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
-@Table(name = "tarefa")
+@Table(name = "tarefas")
 public class TarefaEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     private String nome;
     private String descricao;
