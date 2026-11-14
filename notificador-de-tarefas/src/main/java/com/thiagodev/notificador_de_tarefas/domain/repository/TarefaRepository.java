@@ -4,16 +4,16 @@ import com.thiagodev.notificador_de_tarefas.domain.entity.TarefaEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.List;
 
 @Repository
 public interface TarefaRepository extends JpaRepository<TarefaEntity, Long> {
 
-    TarefaEntity findById(long id);
-    TarefaEntity findByNome(String nome);
-    TarefaEntity findyByHorarioDeExecucao(LocalDateTime horarioParaExecutarTarefa);
-
-    boolean existByNome(String nome);
-
-    void deleteByNome(String nome);
+    List<TarefaEntity> findByTitulo(String titulo);
+    List<TarefaEntity> findByData(LocalDate data);
+    List<TarefaEntity> findByHorario(LocalTime horario);
+    
+    void deleteByTitulo(String titulo);
 }
